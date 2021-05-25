@@ -21,7 +21,7 @@ export default function FrontPage(props) {
       <View>
           <Image
            source={require('../image/logo2.png')}
-          style={{ width: 330, height: 300, marginRight:20,}} 
+          style={{ width: 330, height: 300, marginLeft:15}} 
           />
       </View>
       <View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   text:{
       color: '#fafcff',
       fontSize:30,
-      marginLeft: 15,
+      marginLeft: 30,
       marginTop: 70,
       fontFamily: 'monospace', 
       fontWeight: 'bold',
@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     fontSize:30,
     letterSpacing: 10,
     color: '#fafcff',
-    marginLeft: 50,
+    marginLeft: 60,
     paddingBottom:100,
   },
   slogan: {
       marginTop: 70,
-      marginLeft: 20,
+      marginLeft: 30,
     letterSpacing: 5,
     color: '#fafcff',
     paddingBottom:100,

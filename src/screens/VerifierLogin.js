@@ -1,80 +1,44 @@
-import React, {Component} from "react";
-// import axios from 'axios';
-import { StyleSheet, Text, View, Image,TextInput,TouchableOpacity} from 'react-native';
+import React, {useState} from "react";
+import axios from 'axios';
+import { StyleSheet, Text, View, Image,TextInput,TouchableOpacity,Alert, animation, KeyboardAvoidingView} from 'react-native';
 import  LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from '@react-native-community/async-storage';
 
-
-export default class Login extends Component{
-     
-// export default function Login(props){
-    // const [patient_id, setPatient_id] = useState("");
+export default function VerifierLogin(props){
+    // const [verifier_id, setVerifier_id] = useState("");
     // const [password, setPassword] = useState("");
- 
+    // const [errortext, setErrortext] = useState('');
+
     // const [loginStatus, setLoginStatus] = useState("");
-
-    constructor(props){
-        super(props);
-        this.state={
-           patient_id : '',
-           password : ''
-        }
-    }
-    
-       
-
-      login = ()=>{
-    
-        fetch("http://10.0.2.2:3001/patientRegistration/login",{
-            method: 'POST',
-            headers:{
-                // 'Accept': 'application/json',
-                'Content-Type' : 'application/json',
-
-            },
-            body: JSON.stringify({
-                patient_id: this.state.patient_id,
-                password: this.state.password,
-            })
-        }).then((response)=>response.json())
-        .then((res)=>{
-            if(res.success === true){
-                var patient_id = res.message;
-            
-            AsyncStorage.setItem('patient_id', patient_id);
-            AsyncStorage.getItem('patient_id');
-            this.props.navigation.navigate(`Profile`,{patient_id});
-            console.log(this.getValueFunction(patient_id))
-           
-        }
-        else{
-            alert(res.message);
-        }
-    }).done();
-}
-    //          patient = (patient_id) =>{
-    // this.props(`http://10.0.2.2:3001/patientRegistration/${patient_id}`)
-    //         }
-      
-getValueFunction = async () => {
-    try {
-     let user = await AsyncStorage.getItem('patient_id');
-      alert(user)
-    }
-    catch{
-        alert(error)
-    }
-   };
-  
-
- 
    
 
-render(){
+    // const LoginVerifier = ()=>{
+    //   if(!verifier_id || !password){
+    //     alert("Provide id/password");
+    //   }
+    //   else{
+    //   axios.post("http://127.0.0.1:3001/verifier/login",{
+    //     verifier_id : verifier_id,
+    //     password : password,
+    //   }).then((response)=>{
+    //    if(response.data.message){
+    //    alert("Please Provide correct id/password")
+    //      setLoginStatus(response.data.message);
+    //      }else{
+    //      setLoginStatus(response.data[0].verifier_id);
+    //      props.navigation.navigate('Profile')
+    //    }
+      
+    //   });
+    // }
+
+    // };
     
+
 return(
+   
     <View style={styles.container}> 
     <View style={styles.header}>
     <Image
@@ -88,13 +52,13 @@ return(
              Digital Immunity Passport
         </Text>
         </View>
-
         
         <Animatable.View 
             animation="fadeInUpBig"
             style={styles.footer}
         >
-    <Text style={styles.text_footer}>Patient ID</Text>
+             <KeyboardAvoidingView>
+    <Text style={styles.text_footer}>Verifier ID</Text>
         <View style={styles.action}>
             <FontAwesome
                name ='user-o'
@@ -103,14 +67,18 @@ return(
                marginTop="10" />
 
 <TextInput
-onChangeText={(patient_id)=>this.setState({patient_id})}
-value={this.state.patient_id}
-    style={styles.textInput}     
-      placeholder="Your Patient ID"
+// onChange={(e)=>{setVerifier_id(e.target.value)}}
+// onChangeText = {this.handleVerifier}
+onChangeText={(text)=>setVerifier_id(text)}
+// onChangeText={(verifier_id) =>
+//     setVerifier_id(verifier_id)
+//   }
+    style={styles.textInput}    
+    value={verifier_id} 
+      placeholder="Your Verifier ID"
       
       
     />
-  
     </View>
     
     <Text style={{color: '#05375a',fontSize: 18, marginTop:18}}   >Password</Text>
@@ -121,26 +89,30 @@ value={this.state.patient_id}
                size={24}
                marginTop="10" />
 <TextInput
-// onChange={(password)=>setPassword(password)}
-// value={password}
-onChangeText={(password)=>this.setState({password})}
-value={this.state.password}
-    style={styles.textInput}     
+// onChange={(e)=>{setPassword(e.target.value)}}
+// onChangeText = {this.handlePassword}
+onChangeText={(text)=>setPassword(text)}
+value={password}
+    style={styles.textInput}  
+      
       placeholder="Your Password"
       secureTextEntry={true}
 />
 
         </View>
+     
         <TouchableOpacity 
-         onPress={() => this.props.navigation.navigate('ForgotPassword')}>
+         onPress={()=>props.navigation.navigate('ForgotPassword')}>
                 <Text style={{color: '#41649c', marginTop:15}} >Forgot password?</Text>
     </TouchableOpacity>
-       <View style={styles.button}>
+       
+    <View style={styles.button}>
            <TouchableOpacity style={styles.signIn} 
-            onPress={this.login}
-            
-            // onPress={()=>this.props.navigation.navigate('Profile')}
-           >
+            // onPress={() => LoginVerifier(props)}
+            onPress={()=>props.navigation.navigate('Verifier')}
+            >
+       
+           
                <LinearGradient
               colors={['#93c0f5','#41649c']} 
               style={styles.signIn} 
@@ -154,16 +126,16 @@ value={this.state.password}
        </View>
           <View style={{position:"absolute", marginTop:400, marginLeft:30}}>
        <FontAwesome name="angle-left" size={30} color="#41649c"  
-        onPress={() => this.props.navigation.push('Home')}
+        onPress={()=>props.navigation.push('Home')}
        />
        </View> 
+       </KeyboardAvoidingView>
 </Animatable.View>
-</View>
-   
-);
-                }
-}
 
+</View>
+
+);
+}
 const styles = StyleSheet.create({
     container:{
         flex: 1,
@@ -243,6 +215,11 @@ textSign: {
     fontSize: 18,
     fontWeight: 'bold',
     fontFamily:"Xenosphere-RM66",
+},
+errorTextStyle: {
+  color: 'red',
+  textAlign: 'center',
+  fontSize: 14,
 }
    
   });

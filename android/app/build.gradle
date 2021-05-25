@@ -133,6 +133,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
+        multiDexEnabled true;
         versionName "1.0"
         missingDimensionStrategy 'react-native-camera', 'general'
     }
@@ -155,6 +156,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            manifestPlaceholders = [usesCleartextTraffic:"true"]
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -162,6 +164,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            manifestPlaceholders = [usesCleartextTraffic:"false"]
         }
     }
 
@@ -188,6 +191,7 @@ dependencies {
     implementation project(':react-native-linear-gradient')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     compile project(':react-native-vector-icons')
+    // implementation 'com.android.support:multidex:1.0.3'
     implementation project(':react-native-camera')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

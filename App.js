@@ -7,7 +7,12 @@ import Profile from './src/screens/Profile';
 import Code from './src/screens/QRCode';
 import Home from './src/screens/Home';
 import ForgotPassword from './src/screens/ForgotPassword';
+import VerifierForgotPassword from './src/screens/VerifierForgotPassword';
 import Verifier from './src/screens/Verifier';
+import VerifierLogin from './src/screens/VerifierLogin';
+
+
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -35,6 +40,12 @@ export default function App() {
         }}
         />
          <Stack.Screen name="Verifier" component={Verifier} 
+        options={{headerShown: false}}
+        />
+        <Stack.Screen name="VerifierLogin" component={VerifierLogin} 
+        options={{headerShown: false}}
+        />
+        <Stack.Screen name="VerifierForgotPassword" component={VerifierForgotPassword} 
         options={{headerShown: false}}
         />
         <Stack.Screen name="Login" component={Login} 

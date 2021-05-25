@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import  LinearGradient from 'react-native-linear-gradient';
@@ -18,7 +17,7 @@ export default function Home(props) {
 
   <View style={styles.button}>
            <TouchableOpacity style={styles.signIn} 
-           onPress={()=>props.navigation.navigate('Verifier')}
+           onPress={()=>props.navigation.navigate('VerifierLogin')}
            >
                <LinearGradient
               colors={['#93c0f5','#41649c']} 
@@ -98,3 +97,4 @@ textSign: {
 }
 
 });
+
