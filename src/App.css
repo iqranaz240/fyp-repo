@@ -1,0 +1,224 @@
+.main {
+  background-color: #41649c;
+  /* margin-top: -40px; */
+  /* height: 100vh; */
+}
+.mainLogo{
+  height:250px;
+  width:250px;
+  margin-left:450px;
+  margin-top:99px;
+}
+.mainh1{
+  font-size:50px;
+  color: #fff;
+  font-family:'Sonsie One';
+  margin-left:320px;
+}
+.mainh4{
+  font-size:40px;
+  color: #fff;
+  font-family:'Carter One';
+  margin-left:380px;
+}
+.mainh6{
+  font-size:30px;
+  color:#fff;
+  font-family:'Carter One';
+  letter-spacing:3px;
+  margin-left:480px;
+}
+.startBtn{
+  margin-left:500px;
+  margin-top:50px;
+  margin-bottom:20px;
+}
+.adminCard{
+  margin-bottom:50px;
+  width:850px; 
+  margin-left:300px;
+
+}
+.registration{
+  display: flex;
+  margin-left:200px;
+  margin-bottom:100px;
+}
+.registration1{
+  display: flex;
+  margin-left:330px;
+  margin-bottom:100px;
+  width: 670px;
+}
+
+.myViewCard{
+  max-width: 600px;
+  max-height: fit-content;
+  margin-left: 400px;
+  margin-top: 120px;
+  border: 1px solid;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow:  5px 10px #41649c;
+ 
+ 
+}
+.cardStyle{
+  height:50px !important;
+  font-Size:20px !important;
+  background-Color: #41649c !important;
+  color: white !important
+}
+.myCard{
+  max-width: 400px;
+  max-height: fit-content;
+  margin-left: 400px;
+  margin-top: 150px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow:  5px 10px #41649c;
+  
+}
+.cardTitle{
+  font-family: "Carter One";
+  font-size: 30px !important;
+  color: #41649c;
+  text-align: center;
+}
+.loginBtn{
+font-family: "Carter One";
+display: flex;
+justify-content: center;
+position: relative;
+margin-left: 150px;
+}
+.formLabel{
+  color: #41649c;
+  font-weight: 500;
+}
+.VCLabel{
+  position: absolute;
+  margin-left: 220px;
+  padding-top: 100px;
+}
+.labelName{
+  color: #41649c;
+  font-weight: 500;
+}
+
+
+
+/* ------WelcomePAgeMediaQuery--------- */
+@media (max-width: 800px){
+  .mainLogo{
+    margin-left: 120px;
+  }
+  .mainh1{
+    margin-left: 40px;
+    font-size: 40px;
+  }
+  .mainh4{
+    margin-left: 120px;
+    font-size: 30px;
+  }
+  .mainh6{
+    margin-left: 160px;
+    font-size: 30px;
+  }
+  .startBtn{
+    margin-left: 190px;
+    margin-bottom: 27px;
+  }
+  .loginBtn{
+    margin-left: 170px !important;
+  }
+  .myCard{
+    margin-left: 0 !important;
+   
+  }
+  .adminCard{
+    margin-left: 20px !important;
+    width: 430px !important;
+  }
+  .registration{
+    margin-left:10px;
+  }
+.VCLabel{
+  margin-left: -400px !important;
+}
+.registration1{
+  margin-left:30px !important;
+  width: 350px !important;
+}
+}
+
+.box{
+    /* width:1050px; */
+    background-color:white;
+    margin-top:20px;
+    height: fit-content;
+    left:800px;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    box-shadow : 4px 4px  #41649c ;
+    width: 900px;
+}
+.headStyle{
+  color: #41649c;
+  font-size: 30px;
+  font-family:'Carter One';
+}
+
+.mr-xl-2{
+  width: 500px !important;
+}
+.navStyle{
+  font-family: "Carter One";
+  color: #41649c !important;
+}
+
+.logoutBtn{
+  margin-top: 1000 !important;
+  position: relative !important;
+}
+
+
+
+/* ------LoginMediaQuery-------- */
+
+@media (max-width: 500px){
+  .loginBtn{
+    margin-left: 50px;
+  }
+  .myCard{
+    margin-left: 0;
+  }
+  .adminCard{
+    margin-left: 0px !important;
+    width: 270px;
+  }
+  .registration{
+    margin-left:10px;
+  }
+  .box{
+    background-color:white;
+    margin-top:20px;
+    height: fit-content;
+    left:250px;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    box-shadow : 2px 2px #41649c ;
+    width: 400px;
+  }
+}
+@media (max-width: 1200px){
+  .loginBtn{
+    margin-left: 200px;
+  }
+  .myCard{
+    margin-left: 200px;
+  }
+ 
+}
