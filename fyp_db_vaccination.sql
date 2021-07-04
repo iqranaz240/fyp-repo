@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `vaccination`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vaccination` (
-  `v_id` varchar(45) NOT NULL,
+  `v_id` int NOT NULL AUTO_INCREMENT,
   `patient_id` varchar(45) DEFAULT NULL,
   `vc_id` varchar(45) NOT NULL,
   `vaccine_id` varchar(45) DEFAULT NULL,
@@ -32,8 +32,9 @@ CREATE TABLE `vaccination` (
   `date` varchar(45) DEFAULT NULL,
   `result` varchar(45) NOT NULL,
   `reason` varchar(45) DEFAULT NULL,
+  `vaccinationHash` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`v_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +43,7 @@ CREATE TABLE `vaccination` (
 
 LOCK TABLES `vaccination` WRITE;
 /*!40000 ALTER TABLE `vaccination` DISABLE KEYS */;
-INSERT INTO `vaccination` VALUES ('v1','p2','vc5','vac01','d1','5:00','3-2-2021','verify','defghtj');
+INSERT INTO `vaccination` VALUES (1,'p3','vc5','vac1','d1','5:00','3-2-2021','verify','defghtj',NULL),(2,'p1','1','vac2','d2','5:00','asdfg','sdfg','erfgh',NULL),(3,'p3','3','vac2','d1','5:00','asdfg','sdfg','erfgh',NULL);
 /*!40000 ALTER TABLE `vaccination` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:47
+-- Dump completed on 2021-07-04 21:18:18

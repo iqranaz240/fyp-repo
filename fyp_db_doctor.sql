@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `doctor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `doctor` (
-  `doctor_id` varchar(45) NOT NULL,
+  `doctor_id` int NOT NULL AUTO_INCREMENT,
   `vc_id` varchar(45) DEFAULT NULL,
   `f_name` varchar(45) NOT NULL,
   `l_name` varchar(45) NOT NULL,
@@ -38,9 +38,10 @@ CREATE TABLE `doctor` (
   `city` varchar(45) NOT NULL,
   `state` varchar(45) NOT NULL,
   `zip` varchar(45) NOT NULL,
+  `doctorHash` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`doctor_id`),
   UNIQUE KEY `doctor_id_UNIQUE` (`doctor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +50,7 @@ CREATE TABLE `doctor` (
 
 LOCK TABLES `doctor` WRITE;
 /*!40000 ALTER TABLE `doctor` DISABLE KEYS */;
-INSERT INTO `doctor` VALUES ('1','vc3','xyz','bxr','xyz@gmail.com','1234','xyz',43,'MBBS','male','2-6-1989','islam','Karachi','Sindh','77201'),('2','vc1','xyz','bxr','abc@gmail.com','56788','xyz',43,'MBBS','male','2-6-1989','islam','Karachi','Sindh','77201');
+INSERT INTO `doctor` VALUES (1,'vc3','xyz','bxr','xyz@gmail.com','1234','xyz',43,'MBBS','male','2-6-1989','islam','Karachi','Sindh','77201',NULL),(2,'vc1','xyz','bxr','abc@gmail.com','56788','xyz',43,'MBBS','male','2-6-1989','islam','Karachi','Sindh','77201',NULL);
 /*!40000 ALTER TABLE `doctor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:46
+-- Dump completed on 2021-07-04 21:18:18

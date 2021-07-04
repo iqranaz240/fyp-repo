@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS `vf_center`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vf_center` (
-  `vfc_id` varchar(45) NOT NULL,
+  `vfc_id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `admin_id` varchar(45) NOT NULL,
+  `admin_id` int NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(45) DEFAULT NULL,
   `address` varchar(255) NOT NULL,
@@ -34,8 +34,9 @@ CREATE TABLE `vf_center` (
   `city` varchar(45) NOT NULL,
   `state` varchar(45) NOT NULL,
   `zip` varchar(45) NOT NULL,
+  `vf_centerHash` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`vfc_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +45,7 @@ CREATE TABLE `vf_center` (
 
 LOCK TABLES `vf_center` WRITE;
 /*!40000 ALTER TABLE `vf_center` DISABLE KEYS */;
-INSERT INTO `vf_center` VALUES ('1','asdff','1001','sxd','1234','sdcvfbg',12345,'12','sdcfv','sdfg','12');
+INSERT INTO `vf_center` VALUES (1,'asdff',1001,'sxd','1234','sdcvfbg',12345,'12','sdcfv','sdfg','12',NULL);
 /*!40000 ALTER TABLE `vf_center` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:47
+-- Dump completed on 2021-07-04 21:18:17

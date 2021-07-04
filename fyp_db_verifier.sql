@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `verifier`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `verifier` (
-  `verifier_id` varchar(45) NOT NULL,
+  `verifier_id` int NOT NULL AUTO_INCREMENT,
   `vfc_id` varchar(45) NOT NULL,
   `f_name` varchar(45) NOT NULL,
   `l_name` varchar(45) NOT NULL,
@@ -39,8 +39,9 @@ CREATE TABLE `verifier` (
   `state` varchar(45) NOT NULL,
   `zip` varchar(45) NOT NULL,
   `cnic` varchar(45) NOT NULL,
+  `verifierHash` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`verifier_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +50,7 @@ CREATE TABLE `verifier` (
 
 LOCK TABLES `verifier` WRITE;
 /*!40000 ALTER TABLE `verifier` DISABLE KEYS */;
-INSERT INTO `verifier` VALUES ('1','vfc1','xcvbn',' sdfgh','abc@gmail.com','1234',12345,'sdcfvb ','zxcvb','cvb','fghnj','dfvb','dfvgbhnjfgbhn','sdfgb','hyjmk,','asdfgh'),('2','vfc1','13edf','rfgth','rfgt','1234',34,'dfg','dfg','dgf','fgh','dfg',NULL,'dfg','dfg','df');
+INSERT INTO `verifier` VALUES (1,'vfc1','xcvbn',' sdfgh','abc@gmail.com','1234',12345,'sdcfvb ','zxcvb','cvb','fghnj','dfvb','dfvgbhnjfgbhn','sdfgb','hyjmk,','asdfgh',NULL),(2,'vfc1','13edf','rfgth','rfgt','1234',34,'dfg','dfg','dgf','fgh','dfg',NULL,'dfg','dfg','df',NULL);
 /*!40000 ALTER TABLE `verifier` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:46
+-- Dump completed on 2021-07-04 21:18:17

@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `vc_center`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vc_center` (
   `vc_id` int NOT NULL AUTO_INCREMENT,
-  `admin_id` varchar(45) NOT NULL,
+  `admin_id` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(45) DEFAULT NULL,
@@ -34,8 +34,9 @@ CREATE TABLE `vc_center` (
   `city` varchar(45) NOT NULL,
   `state` varchar(45) NOT NULL,
   `zip` int NOT NULL,
+  `vc_centerHash` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`vc_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +45,7 @@ CREATE TABLE `vc_center` (
 
 LOCK TABLES `vc_center` WRITE;
 /*!40000 ALTER TABLE `vc_center` DISABLE KEYS */;
-INSERT INTO `vc_center` VALUES (1,'1001','asdf','dfg','1234','cvb',1234,'12','sdfg','def',23),(2,'1001','asd','sdf','1234','xcv',123456,'13','sdf','sdfg',234),(5,'1001',' abc','abc@gmail.com','1234','zxcv',12345,'3','swdefr','sdfgb',123),(6,'fd','dfg','sdfg','1234','dcfvb',123,'23','sdf','sdf',2345),(16,'',' abc','abc@gmail.com','123','dfvgbn',23456,'2','xcdfvgg','sdfrgthy',23),(17,'',' abc','abc@gmail.com','1234','dfgh',2345,'34','sdfgh','sdfgb',24),(18,'',' abc','abc@gmail.com','1234','dfg',12345,'123','swdefr','sdfg',34),(20,'',' abc','abc@gmail.com','123','wdfgh',12345,'32','xcdfvgg','sdfrgthy',321),(23,'',' abc','abc@gmail.com','1234','fghnj',12345,'2','swdefr','sdfgb',123);
+INSERT INTO `vc_center` VALUES (1,1001,'asdf','dfg','1234','cvb',1234,'12','sdfg','def',23,NULL),(2,1001,'asd','sdf','1234','xcv',123456,'13','sdf','sdfg',234,NULL),(5,1001,' abc','abc@gmail.com','1234','zxcv',12345,'3','swdefr','sdfgb',123,NULL),(16,1,' abc','abc@gmail.com','123','dfvgbn',23456,'2','xcdfvgg','sdfrgthy',23,NULL),(17,2,' abc','abc@gmail.com','1234','dfgh',2345,'34','sdfgh','sdfgb',24,NULL),(18,2,' abc','abc@gmail.com','1234','dfg',12345,'123','swdefr','sdfg',34,NULL),(20,1,' abc','abc@gmail.com','123','wdfgh',12345,'32','xcdfvgg','sdfrgthy',321,NULL),(24,1,' abc','abc@gmail.com','1234','dfg',2345,'22','dfvb','sindh',23,NULL);
 /*!40000 ALTER TABLE `vc_center` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:46
+-- Dump completed on 2021-07-04 21:18:18

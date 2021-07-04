@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
-  `admin_id` varchar(45) NOT NULL,
+  `admin_id` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES ('1','abc','sdg','fghj','naz789',12456,'sdfg','fghyjk','bnj','ghj','xdrtyh','ghj',NULL),('2','acvfc','sdefrgt','defrgth','1234',123456,'1sdfg','efrtg','dfgh','sdert','sdfg','dfg',NULL);
+INSERT INTO `admin` VALUES (1,'abc','sdg','fghj','naz789',12456,'sdfg','fghyjk','bnj','ghj','xdrtyh','ghj',NULL),(2,'acvfc','sdefrgt','defrgth','1234',123456,'1sdfg','efrtg','dfgh','sdert','sdfg','dfg',NULL);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:47
+-- Dump completed on 2021-07-04 21:18:17

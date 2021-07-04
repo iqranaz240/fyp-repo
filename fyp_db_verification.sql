@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `verification`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `verification` (
-  `vn_id` varchar(45) NOT NULL,
+  `vn_id` int NOT NULL AUTO_INCREMENT,
   `vfc_id` varchar(45) DEFAULT NULL,
   `verifier_id` varchar(45) NOT NULL,
   `patient_id` varchar(45) NOT NULL,
@@ -31,8 +31,9 @@ CREATE TABLE `verification` (
   `time` varchar(45) NOT NULL,
   `purpose` varchar(45) DEFAULT NULL,
   `result` varchar(45) NOT NULL,
+  `verificationHash` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`vn_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +42,7 @@ CREATE TABLE `verification` (
 
 LOCK TABLES `verification` WRITE;
 /*!40000 ALTER TABLE `verification` DISABLE KEYS */;
-INSERT INTO `verification` VALUES ('vn1','vfc2','ver02','p2','3-2-2021','5:00','wertg','lkjh'),('vn2','vfc2','ver01','p1','3-2-2021','5:00','wertyui','verify');
+INSERT INTO `verification` VALUES (1,'vfc2','ver02','p2','3-2-2021','5:00','wertg','lkjh',NULL),(2,'vfc2','ver01','p1','3-2-2021','5:00','wertyui','verify',NULL);
 /*!40000 ALTER TABLE `verification` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 12:39:46
+-- Dump completed on 2021-07-04 21:18:17
